@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Page4 - Table2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            /* background-color: #bcbec391; */
+        }
+
+        img {
+            height: 40px;
+        }
+
+        .navbar {
+            background-color: gray;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+        }
+
+        table {
+            width: 100%;
+            /* margin: 70px auto; */
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .he {
+            display: flex;
+        }
+
+        .gll {
+            width: 100%;
+        }
+
+        .tera {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-danger">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./keshav.png" alt="airtel_logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                <form class="d-flex">
+                    <button class="btn btn-success" type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="he">
+        <ul class="ms-auto mt-2 tera">
+            <select class="form-select mx-2">
+                <option>Filtered Table</option>
+                <option>Complete Data</option>
+            </select>
+            <!-- <button class="btn btn-secondary ms-auto">Dropdown Filter</button> -->
+            <button class="btn btn-outline-danger ms-auto mx-2">Download</button>
+            <input class="ms-auto" type="text" id="searchInput" placeholder="Search">
+        </ul>
+    </div>
+    <table id="table">
+            <thead>
+                <tr>
+                    <th>OLM ID</th>
+                    <th>Name</th>
+                    <th>Reporting_Manager</th>
+                    <th>Domain</th>
+                    <th>Functional_Head</th>
+                    <th>Date/Time</th>
+                    <th>IP</th>
+                    <th>NeId</th>
+                    <th>Command</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A1PX8C</td>
+                    <td>Keshav</td>
+                    <td>keshav@gmail.com</td>
+                    <td>V5</td>
+                    <td>Smjha na</td>
+                    <td>18/45/2045</td>
+                    <td>987651</td>
+                    <td>Abhi hun na</td>
+                    <td>Lets do it</td>
+                </tr>
+                <tr>
+                    <td>B0265354</td>
+                    <td>Divya</td>
+                    <td>divya@gmail.com</td>
+                    <td>Samsung</td>
+                    <td>Werngo</td>
+                    <td>12/34/6789</td>
+                    <td>463245</td>
+                    <td>krte h</td>
+                    <td>Hello hello</td>
+                </tr>
+                <tr>
+                    <td>B0265354</td>
+                    <td>Devya</td>
+                    <td>divya@gmail.com</td>
+                    <td>Samsung</td>
+                    <td>Werngo</td>
+                    <td>12/34/6789</td>
+                    <td>463245</td>
+                    <td>krte h</td>
+                    <td>Hello hello</td>
+                </tr>
+                <tr>
+                    <td>B0265354</td>
+                    <td>Dovya</td>
+                    <td>divya@gmail.com</td>
+                    <td>Samsung</td>
+                    <td>Werngo</td>
+                    <td>12/34/6789</td>
+                    <td>463245</td>
+                    <td>krte h</td>
+                    <td>Hello hello</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script> 
+        function searchTable() { 
+            var input, filter, table, tr, td, i, txtValue; 
+            input = document.getElementById("searchInput"); 
+            filter = input.value.toUpperCase(); 
+            table = document.querySelector("table"); 
+            tr = table.getElementsByTagName("tr"); 
+            for (i = 0; i < tr.length; i++) { 
+                for (var j = 0; j < 9; j++) {  
+                    td = tr[i].getElementsByTagName("td")[j]; 
+                    if (td) { 
+                        txtValue = td.textContent || td.innerText; 
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) { 
+                            tr[i].style.display = ""; 
+                            break;  
+                        } else { 
+                            tr[i].style.display = "none"; 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        document.getElementById("searchInput").addEventListener("keyup", searchTable); 
+</script>
+</body>
+
+</html>
